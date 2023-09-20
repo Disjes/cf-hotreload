@@ -1,0 +1,9 @@
+{
+    "name": "hot-reload-app",
+    "version": "1.0.0",
+    "description": "An app for loading dymnamic scripts on runtime",
+    "main": "app.js",
+    "scripts": {
+      "start": "node app.js"
+    }
+  }
