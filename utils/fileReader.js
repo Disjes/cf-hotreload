@@ -1,21 +1,14 @@
-const functions = require('firebase-functions');
 const { Storage } = require('@google-cloud/storage');
-
 const storage = new Storage();
 
-exports.readFileFromGCS = functions.https.onRequest(async (req, res) => {
-    const bucketName = 'gdoc-md-sync-391822.appspot.com';
-    const fileName = 'hotReloadModule.js';
-
-    try {
-        const content = await readFileFromGCS(bucketName, fileName);
-        res.send(content);
-    } catch (error) {
-        console.error('Error reading file:', error);
-        res.status(500).send('Error reading file.');
-    }
-});
-
+/**
+ * Read a file from Google Cloud Storage.
+ *
+ * @param {string} bucketName - Name of the GCS bucket.
+ * @param {string} fileName - Name of the file to be read.
+ * @returns {Promise<string>} - The content of the file.
+ * @throws {Error} If reading the file fails.
+ */
 async function readFileFromGCS(bucketName, fileName) {
     const bucket = storage.bucket(bucketName);
     const file = bucket.file(fileName);
@@ -34,3 +27,7 @@ async function readFileFromGCS(bucketName, fileName) {
             });
     });
 }
+
+module.exports = {
+    readFileFromGCS
+};
