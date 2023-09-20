@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Install Global Dependencies
-          run: npm install -g firebase-tools
+        run: npm install -g firebase-tools
 
       - name: Install Function Dependencies
         run: |
