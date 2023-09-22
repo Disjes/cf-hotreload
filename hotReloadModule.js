@@ -1,5 +1,5 @@
-function hotReloadFunction() {
-    console.log("hotReloadFunction in hotReloadModule has been executed!");
+function hotReloadFunction(name) {
+    return "Hi! My name is " + name;
 }
 
 module.exports = hotReloadFunction;

@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "gdoc-md-sync-391822"
-  }
+    "default": "gdoc-sync-391822",
+    "dev": "gdoc-sync-391822"
+  },
+  "targets": {},
+  "etags": {}
 }
